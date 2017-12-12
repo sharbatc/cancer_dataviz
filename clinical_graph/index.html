@@ -1,27 +1,59 @@
 <!doctype html>
 <html>
 	<head>
-		<script src = 'assets/cola.js'></script>
+		<link href="graph.css" rel="stylesheet" type="text/css" />
+		
+		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
+		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
 		<script src = 'assets/d3v4.js'></script>
 	    <script src = 'assets/cytoscape.js'></script>
 	    <script src = "assets/jquery-3.2.1.min.js"></script>
 	    <script src = "assets/data"></script>
-	    <script src = 'main.js'> </script>
 	</head>
 	
-	<style>
-		#cy {
-		    width: 100%;
-		    height: 100%;
-		    position: absolute;
-		    top: 0px;
-		    left: 0px;
-		}
-	</style>
+	
 
 
 	<body>
 		<div id="cy"></div>
+		
+
+		<div id='filters'>
+		<form onsubmit="return updateGraph();" class="filter-form">
+			<p>
+			<label for="input gender">Gender</label>
+		 	<select id="input_gender" name="input gender">
+		 		<option value="all">All</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="input race">Race</label>
+		 	<select id="input_race" name="input gender">
+		 		<option value="all">All</option>
+				<option value="asian">Asian</option>
+				<option value="white">White</option>
+				<option value="black or african american">Black or African american</option>
+				<option value="american indian or alaska native">American indian or Alaska native</option>
+				<option value="not reported">not reported</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="dist_thresh">Distance threshold</label>
+			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  /> 
+			</p>
+			
+			<p>			
+			<input type="submit" value="Submit">
+			</p>
+
+		</form>		
+		</div>
+	    
+	    <script src = 'main.js'></script>
 		
 	</body>
 </html>
