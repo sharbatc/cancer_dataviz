@@ -47,16 +47,21 @@ spring_layout.run()
 document.getElementById("dist_thresh").value = '0.1';
 
 
-var removed;
+var removed = cy.collection();
+
 
 function updateGraph(){
 
 	cy.startBatch();
 	
-//	cy.add(removed);
+	
+	
 	var gender_selection = document.getElementById("input_gender").value;	
 	var race_selection = document.getElementById("input_race").value;
 	var dist_threshold = document.getElementById("dist_thresh").value;
+	
+	removed.restore();
+	
 	
 	if(gender_selection == 'all'){
 		var gender_nodes = cy.nodes();
@@ -75,7 +80,8 @@ function updateGraph(){
 	
 	var updated_graph = keep_nodes.union(keep_edges);
 	
-	removed = cy.remove(updated_graph.absoluteComplement());
+	
+	removed = updated_graph.absoluteComplement().remove();
 	
 	cy.endBatch();
 	
