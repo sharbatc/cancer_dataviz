@@ -1,20 +1,495 @@
 <!doctype html>
-<html>
-	<head>
-		<link href="graph.css" rel="stylesheet" type="text/css" />
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Visualizing Cancer</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@2.0.4/dist/tippy.all.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="js/d3-legend.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="imgs/favicon.png" sizes="16x16" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
 
-		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
-		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
-		<script src = 'https://d3js.org/d3.v4.min.js'></script>
-	    <script src = 'https://rawgit.com/cytoscape/cytoscape.js/master/dist/cytoscape.min.js'></script>
-	    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	    <script src = "assets/data"></script>
-	</head>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap2-toggle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function off(name) {
+            document.getElementById(name).style.display = "none";
+        }
+
+        function on(name) {
+            document.getElementById(name).style.display = "block";
+        }
+    </script>
+
+</head>
+<body>
+<header>
+    <div class="col-sm-2 logos">
+        <a href="https://epfl.ch" target="_blank">
+            <img alt="Logo EPFL" id='epfl-logo' src="//static.epfl.ch/latest/images/logo.svg"/>
+        </a>
+        <a href="https://dlab.epfl.ch/teaching/fall2017/cs401/" target="_blank">
+            <img alt="Logo ADA" id='ada-logo' src="https://dlab.epfl.ch/img/dlab.svg">
+        </a>
+    </div>
+</header>
+
+<main class="full-screen" role="main">
+    <!--Title-->
+    <section class="full-screen centered-section" id="intro-section">
+        <div class="text-center parallax" id="page-title">
+            <h1>Visualizing Wars: <br>The Face of Geopolitics</h1>
+            <br>
+            <h4>by Armand Boschin, Cyril Wendl and Francis Damachi</h4>
+        </div>
+    </section>
+
+    <!--Data Story-->
+    <section id="pinned-trigger1" class="centered-section">
+        <div class="text-center parallax data-story" id="pinned-element1">
+            <div class="story-text">
+
+                    Most of the 90s kids' ideas of political conflicts are largely based on the terrorist attack of
+                    9/11. As most of the world affairs rely deeply on past relationships between nations, the lack of
+                    historical awareness is a threat to an entire generation's ability to critically analyze what they read.
+
+            </div>
+            <div class="image12">
+                <div class="imgContainer">
+                    <img alt="An old dog whom you cannot teach new tricks" src="imgs/trump.jpg"/>
+                    <p>A piece of (fake) news</p>
+                </div>
+                <br>
+                <div class="imgContainer">
+                    <img alt="An young dog whom you can teach new tricks" class="middle-img" src="imgs/meme.png"/>
+                    <p>A 90s kid</p>
+                </div>
+            </div>
+            <div class="story-text">
+
+                <br>
+                <p>As conventional journalism is being superseded by mass consumption of social media which are often
+                    likely to convey biased or <span id="fake-news">fake news</span>, it seems crucial to
+                    reassess our understanding of the more recent world conflicts. The aim of this data story is to lay down
+                    some historical landmarks of world politics.
+                </p>
+                <br>
+                <p> The end of the 1980s represent a turning point in history with the end of the Cold War. Many people
+                    hoped this would lead to a New World Order. Has it been the case? Which conflicts have
+                    taken place since then? How has the world violence evolved since 1989? Let's find answers in
+                    the data.
+                </p>
+                <br>
+                <p>Our work is based on the Uppsala Conflict Data Program (<a class="textlink" target="_blank"
+                                                                              href="http://ucdp.uu.se/downloads/">UCDP</a>)
+                    dataset which records all lethal events having taken place in any country (except Syria and
+                    North-Korea) from 1989 to 2016. Along the data story, some links are provided for further information.
+                    Furthermore, to understand more broadly the current economic and political stability, we also show
+                    economic data from the <a class="textlink" target="_blank" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">
+                        World Bank</a>.
+                </p>
+                <br>
+                <p>In the following, an event represents an incident where armed forces were used by an organised
+                    actor against another actor resulting in at least one direct death on either side.</p>
+                <br>
+                <h3 class="subtitle">Global Analysis</h3>
+                <p>In order to get a  raw sense of world peace, we think of two indicators, the <em>total number of
+                    deaths</em> and <em>civilian deaths</em> caused by armed events.</p>
+
+                <h3 style="text-align: center">Death time series on a global scale</h3>
+                <div id="global-chart"></div>
+                <script src="js/charts_global.js"></script>
+                <br>
+                <br>
+                <br>
+                <p> For comparison, the Holocaust caused about six million Jewish victims during <a
+                        class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Nazi_Germany">Nazi
+                    Germany</a> and the Khmer Rouges killed around 1.5 million people under Pol Pot's <a
+                        class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Democratic_Kampuchea">Democratic
+                    Kampuchea</a>. The Rwandan genocide is the most deadly event in the post cold-war era. It is also
+                    <a class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Democratic_Kampuchea">ranked 7</a> among all the genocides in history.</p>
+                <br>
+                <p>Looking at conflicts on a global scale makes it hard to discern any general tendency. Instead, we
+                    can have a look at the figures on a regional scale.</p>
+
+                </p>
+                <h3 class="subtitle">Regional Analysis</h3>
+
+                <p>
+                    The following figure provides details on the death tolls on a regional scale. For didactic purposes,
+                    hovering on the bars reveals details about the conflicts happening in the corresponding year. A conflict is displayed
+                    if it accounts for more than the 98% quantile of deaths during this year.
+                    <br>
+                    <br>
+                    Take some time to get an idea of the most important conflicts in each continent.
+                </p>
+            </div>
+            <h3 id="chart-title" style="text-align: center">Detailed deaths time series by region</h3>
+            <div class="btn-group-vertical" id="chart-select">
+                <h4>Region</h4>
+                <button type="button" class="btn btn-default top-button choice" id="Africa"
+                        onclick="regionClicked(this)">
+                    Africa
+                </button>
+                <button type="button" class="btn btn-default choice" id="AfricaWR" onclick="regionClicked(this)">
+
+                    Africa without Rwanda
+                </button>
+                <button type="button" class="btn btn-default choice" id="Americas" onclick="regionClicked(this)">
+                    Americas
+                </button>
+
+
+                <button type="button" class="btn btn-default choice" id="Asia" onclick="regionClicked(this)">
+                    Asia
+                </button>
+                <button type="button" class="active btn btn-default choice" id="Europe" onclick="regionClicked(this)">
+                    Europe
+                </button>
+                <button type="button" class="btn btn-default choice" id="MiddleEast" onclick="regionClicked(this)">
+                    Middle East
+                </button>
+                <button class="btn btn-info show-instructions" onclick="on('chart-overlay')">Show Instructions</button>
+            </div>
+            <div id="interactive-chart"></div>
+            <script src="js/charts.js"></script>
+            <div id="details-chart-container">
+                <div id="details-chart" style="text-align:center">
+                    <h3>Details</h3>
+                    <h4>Hover on a bar to obtain more information on conflicts.</h4>
+                </div>
+            </div>
+            <p>
+                The above confirms that Africa, the Middle East and Asia (mainly the western part of Asia) are the three
+                main regions marked by armed conflicts. It is also possible to look at major crises by looking at countries
+                which, during some years, experienced death tolls a 1000 times larger than the median number of deaths over all years.
+                <br>
+                <br>
+                By doing so, we get conflicts you might have already noticed by playing with the preceding figure (such
+                as the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Bosnian_War">Bosnian war</a>,
+                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Rwandan_genocide">Rwandan genocide</a>,
+                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Yemeni_Revolution">Yemeni Revolution</a>)
+                but also the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Mozambican_Civil_War">Mozambican Civil War</a> (5222 casualties),
+                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Tajikistani_Civil_War">Tajikistani Civil War</a> (4571 casualties),
+                and some punctual crisis such as the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Tiananmen_Square_protests_of_1989">Tianamen Square protests</a>
+                in China in 1989 (2600 casualties).
+            </p>
+            <br>
+
+            <p>
+                The following map allows localizing the conflicts. We'll let you hang around on a fatal march then.
+            </p>
+        </div>
+    </section>
+
+
+    <!--Map-->
+    <section id="pinned-trigger2" class="centered-section">
+        <div id="pinned-element2">
+            <br><br>
+            <!--Buttons, Slider-->
+            <div class="row" id="menubar">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" id='map'>
+                    <div id="slidecontainer">
+                        <div class="btn-group" role="group" style="float: left;">
+                            <button id="play" class="btn btn-primary">Play</button>
+                            <button id="type-data" class="btn btn-primary">Sum</button>
+                        </div>
+
+                        <input type="checkbox" id="toggle-two" title="type-data" checked>
+                        <button class="btn btn-info show-instructions" onclick="on('overlay')">Show Instructions
+                        </button>
+
+                        <br><br>
+
+                        <div id="slider"></div>
+
+                        <div id="dataset-title"><h2>Civilian Deaths (sum)</h2></div>
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+            <!--User Guide-->
+            <div id="overlay" onclick="off('overlay')">
+                <div class="help-text">
+                    <h2>Countries</h2>
+                    <ul>
+                        <li>Use the buttons
+                            <div class="dummy btn-group" role="group" aria-label="Basic example">
+                                <button class="dummy btn btn-primary" disabled>Play</button>
+                                <button class="dummy btn btn-primary" disabled>Sum</button>
+                            </div>
+                            to activate the year slideshow or directly use the slider to visualize data for a given year.
+                        </li>
+                        <li>Click
+                            <button class="dummy btn btn-primary" disabled>Sum</button>
+                            to see the sum of deaths for all years
+                        </li>
+                        <li>Click on <input type="checkbox" data-style="dummy" class="dummy toggle-dummy"
+                                            title="type-data" checked disabled> to change the data between civilian and
+                            total deaths
+                        </li>
+                        <li>Hover on a country for some key numbers</li>
+                        <li>Click on a country to get more detailed information</li>
+                        <li>Click on the same country again to get back</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Color Legend-->
+            <div id="color-legend"></div>
+
+            <!--Containers-->
+            <div id="content">
+                <div id="map-container-c">
+                    <div id="map-container">
+
+                    </div>
+                </div>
+                <div id="details"></div>
+            </div>
+
+            <!--Map Script-->
+            <script src="js/map.js"></script>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="data-story">
+            <h3 class="subtitle">Actors Analysis</h3>
+            <p>
+                In addition to a geographical analysis, it is interesting to study the actors causing the conflicts.
+                In the <a target="_blank" class="textlink" href="http://ucdp.uu.se/downloads/">UCDP</a> data set
+                the name of the actors but no additional information is given.
+                <br>
+                <br>
+                We enriched the set by scraping some key Wikipedia pages in order to get a list of armed actors and
+                information about them such as their ideology or official designation as terrorists. Then the scrapted data was matched and merged with
+                the actors using a <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein string distance</a>.
+                <br>
+                <br>
+                This allowed us to provide the following visualization of actors' involvement in conflicts. The bubbles
+                represent the sum of deaths an actor caused in all conflicts (excluding collateral victims). The sum
+                of civilians killed in conflicts in which the actor was involved is also provided for information in the detail view.
+                <br>
+                <br>
+                Note that the Government of Rwanda has been removed from the data set in the following visualization
+                because of the genocide, since it would have otherwise crushed all the other bubbles.
+            </p>
+        </div>
+    </section>
+
+    <!--Bubbles-->
+    <section id="pinned-trigger3">
+        <div id="pinned-element3">
+        <div id="bubbles">
+            <div class="btn-group-vertical actors-select">
+                <h2>Actor Type</h2>
+                <button type="button" class="active btn btn-default top-button choice" id="total_actors"
+                        onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: white;">fiber_manual_record</i>
+                    All actors
+                </button>
+                <button type="button" class="btn btn-default choice" id="cartels" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: pink;">fiber_manual_record</i>
+                    Cartels
+                </button>
+                <button type="button" class="btn btn-default choice" id="christians" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: green;">fiber_manual_record</i>
+                    Christians
+                </button>
+                <button type="button" class="btn btn-default choice" id="left_wing" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: red;">fiber_manual_record</i>
+                    Communists or Socialists
+                </button>
+                <button type="button" class="btn btn-default choice" id="designated_terrorist"
+                        onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: darkblue;">fiber_manual_record</i>
+                    Designated Terrorists
+                </button>
+                <button type="button" class="btn btn-default choice" id="factions" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: orange;">fiber_manual_record</i>
+                    Military Factions
+                </button>
+                <button type="button" class="btn btn-default choice" id="govs" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: purple;">fiber_manual_record</i>
+                    Governments
+                </button>
+                <button type="button" class="btn btn-default choice" id="guerilla" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: lightblue;">fiber_manual_record</i>
+                    Guerilla Groups
+                </button>
+                <button type="button" class="btn btn-default choice" id="islamists" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: brown;">fiber_manual_record</i>
+                    Islamists
+                </button>
+                <button type="button" class="btn btn-default choice" id="liberation_movements"
+                        onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: black;">fiber_manual_record</i>
+                    Liberation Movements
+                </button>
+                <button type="button" class="btn btn-default choice" id="muslims" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: blue;">fiber_manual_record</i>
+                    Muslims
+                </button>
+                <button type="button" class="btn btn-default choice" id="rebel" onclick="seperateBy(this)">
+                    <i class="material-icons legend-icons" style="color: yellow;">fiber_manual_record</i>
+                    Rebel Groups
+                </button>
+
+
+                <button class="btn btn-info show-instructions" onclick="on('bubbles-overlay')">Show Instructions
+                </button>
+            </div>
+            <script>
+                $(".btn-group-vertical > .choice").click(function () {
+                    $(".btn-group-vertical > .choice").removeClass("active");
+                    $(this).addClass("active");
+                });
+            </script>
+        </div>
+        <!--Overlay User Guide Bubbles-->
+        <div id="bubbles-overlay" onclick="off('bubbles-overlay')">
+            <div class="help-text">
+                <h2>Actors</h2>
+                <ul>
+                    <li>The bubble colors indicate the type of actor. Some actors have several types, in which case
+                        the color corresponds to the most general one. For example, communists can also be liberation movements.
+                        Therefore, when selecting a cluster, the colors may be mixed.
+                    </li>
+                    <li>The bubbles size represents the number of total deaths caused by an actor, excluding collateral
+                        civil deaths.
+                    </li>
+                    <li>Hover on a bubble to see the actor's name</li>
+                    <li>Click on it to get more information</li>
+                    <li>If you see some bubbles jittering, do it like in a real war: end the fight by
+                        dropping a big actor in the middle. 😉</li>
+                </ul>
+            </div>
+        </div>
+        <!--Bubbles scripts-->
+        <script src="js/bubbles.js"></script>
+        </div>
+    </section>
+    <section>
+
+        <div class="data-story">
+            <p>The bubbles indicate a tendency that governments seem to be responsible for the largest amount of
+                deaths. However in many cases, governments might not be legitimate (lawfully or morally). The most important
+                actor (except from the Government of Rwanda) is the Government of Afghanistan due to its war against the
+                Talibans. This war caused more than 100'000 <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Enemy_combatant">combatant victims</a>.
+            </p>
+            <br>
+            <h3 class="subtitle">Conclusion</h3>
+            <p>The goal of this data analysis project was to raise awareness for the global developments of the world peace.
+            Through graphical visualization, new insights on complex data can be obtained.
+            </p>
+            <br>
+            <p>The in-depth analysis of a large-scale dataset shows a number of major difficulties to understanding data:
+                Being able to create links requires first and foremost a huge amount of data cleaning and standardization.
+                Secondly, data can be enriched by merging it with external datasets and combining its features. Both have
+                been crucial in this project to produce better visualizations.
+            </p>
+            <br>
+            <p>
+                Finally, the quality of the visualizations depends to a large extent on the possibilities, learning curve and
+                ease of implementation of the used framework. We have enjoyed delving into this challenge, using
+                various frameworks, programming tools and, most importantly, our minds to better understand the recent world history.
+            </p>
+        </div>
+    </section>
+    <!--About Us-->
+    <section class="centered-section about-us-section">
+        <h2>About us</h2>
+        <div class="row" id="about-us">
+            <div class="col-sm-4">
+                <h3>Armand Boschin</h3>
+                <img src="imgs/armand.jpg" class="profile-image" alt="armand">
+                <br>
+                <a target="_blank" href="https://github.com/armand33"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/armandboschin/"><i class="fa fa-linkedin fa-2x socialmedia"
+                                                                                        aria-hidden="true"></i></a>
+                <br><br>
+                <div class="profile-description">École polytechique student <br> Applied Mathematics and Computer Science <br>
+                    EPFL Master student in Data Science</div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Cyril Wendl</h3>
+                <img src="imgs/cyril.JPG" class="profile-image" alt="cyril">
+                <br>
+                <a target="_blank" href="https://github.com/CyrilWendl"><i class="fa fa-github fa-2x socialmedia"
+                                                                           aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/cyrilwendl"><i class="fa fa-linkedin fa-2x socialmedia"
+                                                                                    aria-hidden="true"></i></a>
+                <br><br>
+                <div class="profile-description">EPFL Master student <br> Environmental Engineering and Computer Science<br>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Francis Damachi</h3>
+                <img src="imgs/francis.jpg" class="profile-image" alt="francis">
+                <br>
+                <a target="_blank" href="https://github.com/damachi49"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/francis-ikpe-ogar-damachi-989610148/"><i class="fa fa-linkedin fa-2x socialmedia"
+                                                                                                              aria-hidden="true"></i></a>
+                <br><br>
+                <div class="profile-description">EPFL Master student <br> Computer Science and Data Analytics</div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom">
+        Applied Data Analysis EPFL Semester Project<br>
+        Find us on GitHub <a target="_blank" href="https://github.com/the-face-of-geopolitics/the-face-of-geopolitics.github.io"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
+    </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+<!-- <script src="js/app.js"></script> -->
 
 
 
+<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
+<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
+<script src = 'https://d3js.org/d3.v4.min.js'></script>
+<script src = 'https://rawgit.com/cytoscape/cytoscape.js/master/dist/cytoscape.min.js'></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "assets/data"></script>
 
-	<body>
+		<div >
+			<style>
+			  div.tooltip {
+			  position: absolute;
+			  text-align: left;
+			  width: auto;
+			  height: auto;
+			  padding: 8px;
+			  font: 12px sans-serif;
+			  background: #0a2538;
+			  border: #0a2538 1px solid;
+			  border-radius: 0px;
+			  pointer-events: none;
+			  color: white;
+			}
+			</style>
+			<script src = 'sunburst.js'></script>
+		</div>
 		<div id="cy"></div>
 		<div id="cy-hidden"></div>
 
