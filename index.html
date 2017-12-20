@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script src="https://unpkg.com/tippy.js@2.0.4/dist/tippy.all.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <!-- <script src="js/d3-legend.min.js"></script> -->
+    <script src="https://rawgit.com/susielu/d3-legend/master/d3-legend.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="icon" href="imgs/favicon.png" sizes="16x16" type="image/png">
@@ -39,9 +39,9 @@
         <a href="https://epfl.ch" target="_blank">
             <img alt="Logo EPFL" id='epfl-logo' src="//static.epfl.ch/latest/images/logo.svg"/>
         </a>
-        <a href="https://dlab.epfl.ch/teaching/fall2017/cs401/" target="_blank">
+        <!-- <a href="https://dlab.epfl.ch/teaching/fall2017/cs401/" target="_blank">
             <img alt="Logo ADA" id='ada-logo' src="https://dlab.epfl.ch/img/dlab.svg">
-        </a>
+        </a> -->
     </div>
 </header>
 
@@ -49,9 +49,9 @@
     <!--Title-->
     <section class="full-screen centered-section" id="intro-section">
         <div class="text-center parallax" id="page-title">
-            <h1>Visualizing Wars: <br>The Face of Geopolitics</h1>
+            <h1>Visualizing Cancer</h1>
             <br>
-            <h4>by Armand Boschin, Cyril Wendl and Francis Damachi</h4>
+            <h4>by Kirtan Padh, Luis Medina, Sharbatanu Chatterjee</h4>
         </div>
     </section>
 
@@ -59,10 +59,7 @@
     <section id="pinned-trigger1" class="centered-section">
         <div class="text-center parallax data-story" id="pinned-element1">
             <div class="story-text">
-
-                    Most of the 90s kids' ideas of political conflicts are largely based on the terrorist attack of
-                    9/11. As most of the world affairs rely deeply on past relationships between nations, the lack of
-                    historical awareness is a threat to an entire generation's ability to critically analyze what they read.
+								The Cancer Genomic Atlas (TCGA) provides a lot of
 
             </div>
             <div class="image12">
@@ -107,7 +104,7 @@
                 <p>In order to get a  raw sense of world peace, we think of two indicators, the <em>total number of
                     deaths</em> and <em>civilian deaths</em> caused by armed events.</p>
 
-                <h3 style="text-align: center">Death time series on a global scale</h3>
+                <h3 style="text-align: center">Graph showing patient data</h3>
                 <div id="global-chart"></div>
                 <script src="js/charts_global.js"></script>
                 <br>
@@ -123,7 +120,6 @@
                 <p>Looking at conflicts on a global scale makes it hard to discern any general tendency. Instead, we
                     can have a look at the figures on a regional scale.</p>
 
-                </p>
                 <h3 class="subtitle">Regional Analysis</h3>
 
                 <p>
@@ -398,46 +394,5 @@
 			</style>
 			<script src = 'sunburst.js'></script>
 		</div>
-		<div id="cy"></div>
-		<div id="cy-hidden"></div>
-
-
-		<div id='filters'>
-		<form onsubmit="return updateGraph();" class="filter-form">
-			<p>
-			<label for="input gender">Gender</label>
-		 	<select id="input_gender" name="input gender">
-		 		<option value="all">All</option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select>
-			</p>
-
-			<p>
-			<label for="input race">Race</label>
-		 	<select id="input_race" name="input gender">
-		 		<option value="all">All</option>
-				<option value="asian">Asian</option>
-				<option value="white">White</option>
-				<option value="black or african american">Black or African american</option>
-				<option value="american indian or alaska native">American indian or Alaska native</option>
-				<option value="not reported">not reported</option>
-			</select>
-			</p>
-
-			<p>
-			<label for="dist_thresh">Distance threshold</label>
-			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  />
-			</p>
-
-			<p>
-			<input type="submit" value="Submit">
-			</p>
-
-		</form>
-		</div>
-
-	    <script src = 'main.js'></script>
-
 	</body>
 </html>
