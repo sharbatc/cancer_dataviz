@@ -10,4 +10,4 @@
 
 * Related work : Research by Rachel. 
 
-* Inspiration : The importance of cancer research.
+* Inspiration : The importance of cancer research. People should die in proper times.
