@@ -2,22 +2,22 @@
 <html>
 	<head>
 		<link href="graph.css" rel="stylesheet" type="text/css" />
-		
+
 		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
 		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
-		<script src = 'assets/d3v4.js'></script>
-	    <script src = 'assets/cytoscape.js'></script>
-	    <script src = "assets/jquery-3.2.1.min.js"></script>
+		<script src = 'https://d3js.org/d3.v4.min.js'></script>
+	    <script src = 'https://rawgit.com/cytoscape/cytoscape.js/master/dist/cytoscape.min.js'></script>
+	    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	    <script src = "assets/data"></script>
 	</head>
-	
-	
+
+
 
 
 	<body>
 		<div id="cy"></div>
 		<div id="cy-hidden"></div>
-		
+
 
 		<div id='filters'>
 		<form onsubmit="return updateGraph();" class="filter-form">
@@ -29,7 +29,7 @@
 				<option value="female">Female</option>
 			</select>
 			</p>
-			
+
 			<p>
 			<label for="input race">Race</label>
 		 	<select id="input_race" name="input gender">
@@ -41,22 +41,20 @@
 				<option value="not reported">not reported</option>
 			</select>
 			</p>
-			
+
 			<p>
 			<label for="dist_thresh">Distance threshold</label>
-			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  /> 
+			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  />
 			</p>
-			
-			<p>			
+
+			<p>
 			<input type="submit" value="Submit">
 			</p>
 
-		</form>		
+		</form>
 		</div>
-	    
+
 	    <script src = 'main.js'></script>
-		
+
 	</body>
 </html>
-
-
