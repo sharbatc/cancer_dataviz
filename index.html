@@ -1,40 +1,62 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-    html, body, #Sunburst {
-        height: 100%;
-        min-height: 100%;
-        width: 100%;
-        min-width: 100%;
-    }
-</style>
-<head>
-  <script src="https://d3js.org/d3.v4.js"></script>
-  <script src="main.js"></script>
+<!doctype html>
+<html>
+	<head>
+		<link href="graph.css" rel="stylesheet" type="text/css" />
+		
+		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
+		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
+		<script src = 'assets/d3v4.js'></script>
+	    <script src = 'assets/cytoscape.js'></script>
+	    <script src = "assets/jquery-3.2.1.min.js"></script>
+	    <script src = "assets/data"></script>
+	</head>
+	
+	
 
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css">
-  <link rel="stylesheet" href="Dexjs/dist/dex-jquery.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
-  <link rel="stylesheet" href="Dexjs/dist/dex-bootstrap.css">
-  <link rel="stylesheet" href="Dexjs/dist/dex.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="Dexjs/dist/dex-jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="Dexjs/dist/dex-bootstrap.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="Dexjs/dist/dex-libs.js"></script>
-  <script src="Dexjs/dist/dex.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
-</head>
+	<body>
+		<div id="cy"></div>
+		<div id="cy-hidden"></div>
+		
 
-<body>
-  <div id="Sunburst"></div>
+		<div id='filters'>
+		<form onsubmit="return updateGraph();" class="filter-form">
+			<p>
+			<label for="input gender">Gender</label>
+		 	<select id="input_gender" name="input gender">
+		 		<option value="all">All</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="input race">Race</label>
+		 	<select id="input_race" name="input gender">
+		 		<option value="all">All</option>
+				<option value="asian">Asian</option>
+				<option value="white">White</option>
+				<option value="black or african american">Black or African american</option>
+				<option value="american indian or alaska native">American indian or Alaska native</option>
+				<option value="not reported">not reported</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="dist_thresh">Distance threshold</label>
+			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  /> 
+			</p>
+			
+			<p>			
+			<input type="submit" value="Submit">
+			</p>
 
-<script>
-  TreemapParent();
-</script>
-</body>
+		</form>		
+		</div>
+	    
+	    <script src = 'main.js'></script>
+		
+	</body>
 </html>
+
+
