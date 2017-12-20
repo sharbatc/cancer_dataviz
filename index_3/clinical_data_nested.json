@@ -1,0 +1,603 @@
+{
+     "name": "gender",
+     "children": [
+          {
+               "name": "female",
+               "children": [
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "Pakistan",
+                                   "children": [
+                                        {
+                                             "name": "not_reported",
+                                             "size": 2
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 19
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 9
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 14
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 6
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "asian",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "not_reported",
+                                             "size": 11
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "Nigeria",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "Nigeria",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 3
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 48
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 36
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 53
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 37
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "not_reported",
+                                             "size": 2
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "latino",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "latino",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "native american",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Canada",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Canada",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 14
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 26
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 9
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 34
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 4
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 2
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Brazil",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Brazil",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 22
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 18
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 13
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 24
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 164
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 193
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 177
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 131
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "not_reported",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "name": "male",
+               "children": [
+                    {
+                         "name": "black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 3
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "not reported",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {
+                                             "name": "less_than_50",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_50_and_60",
+                                             "size": 1
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "between_60_and_70",
+                                             "size": 3
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "white",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {
+                                             "name": "more_than_70",
+                                             "size": 3
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          }
+     ]
+}
