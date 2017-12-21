@@ -71,13 +71,13 @@ p {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 10px;
     left: 10px;
 }
 
 .help-text{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     font-size: 20px;
@@ -110,12 +110,13 @@ header {
 }
 
 #ada-logo{
-    width:40%;
-    margin-left: 15%
+    width:30%;
+    margin-left: 9%
 }
 
 #epfl-logo{
-    width:40%;
+    width:53%;
+		margin-left: 5%
 }
 
 i{
@@ -175,7 +176,7 @@ div.tooltip {
 .logos{
     float:left;
     top:10px;
-    margin-right:3%
+    margin-right:10%
 }
 
 #slidecontainer {
@@ -423,6 +424,7 @@ circle{
 
 #intro-section{
     background-image: url('imgs/background.jpg');
+		background-size: 100% auto;
 }
 
 #map-svg{
