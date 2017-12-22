@@ -1,30 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <title>Visualizing Cancer</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@2.0.4/dist/tippy.all.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://rawgit.com/susielu/d3-legend/master/d3-legend.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="icon" href="imgs/favicon.png" sizes="16x16" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
-		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
-		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
-		<script src = 'https://rawgit.com/cytoscape/cytoscape.js/master/dist/cytoscape.min.js'></script>
-		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src = "assets/data"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap2-toggle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
 
     <script>
@@ -36,170 +18,88 @@
             document.getElementById(name).style.display = "block";
         }
     </script>
-
 </head>
-<body>
-<header>
-    <div class="col-sm-3 logos">
-        <a href="https://epfl.ch" target="_blank">
-            <img alt="Logo EPFL" id='epfl-logo' src="http://static.epfl.ch/latest/images/logo.svg"/>
-        </a>
-        <a href="https://cancergenome.nih.gov//" target="_blank">
-            <img alt="Logo" id='ada-logo' src="imgs/breastcancerlogo.png">
-        </a>
-    </div>
-</header>
 
-<main class="full-screen" role="main">
+<body>
+    <!-- Logos -->
+    <header>
+        <div class="col-sm-3 logos">
+            <a href="https://epfl.ch" target="_blank">
+                <img alt="Logo EPFL" id='epfl-logo' src="http://static.epfl.ch/latest/images/logo.svg"/>
+            </a>
+            <a href="https://cancergenome.nih.gov//" target="_blank">
+                <img alt="Logo" id='project-logo' src="imgs/breastcancerlogo.png">
+            </a>
+        </div>
+    </header>
+
+    <main class="full-screen" role="main">
     <!--Title-->
-    <section class="full-screen centered-section" id="intro-section">
-        <div class="text-center parallax" id="page-title">
-            <h1>Visualizing Cancer</h1>
-            <br>
-            <h4>Kirtan Padh, Luis Medina, Sharbatanu Chatterjee</h4>
+        <section class="full-screen centered-section" id="intro-section">
+            <div class="text-center parallax" id="page-title">
+                <h1>Visualizing Cancer</h1>
+                <br>
+                <h4>Kirtan Padh, Luis Medina, Sharbatanu Chatterjee</h4>
         </div>
     </section>
 
     <!--Data Story-->
     <section id="pinned-trigger1" class="centered-section">
         <div class="text-center parallax data-story" id="pinned-element1">
-					<h2 class="title" style="text-align:center">The Story of Cancer</h2>
-					<br /></br>
+                    <h2 class="title" style="text-align:center">The Story of Cancer</h2>
+                    <br /></br>
             <div class="story-text">
-								This is a story of <a class="textlink" target = "blank" href="https://en.wikipedia.org/wiki/The_Emperor_of_All_Maladies">the emperor of all maladies</a>, or rather, its future.
+                This is a story of the <a target="_blank" href="https://en.wikipedia.org/wiki/The_Emperor_of_All_Maladies">emperor of all maladies</a>, or rather, its future. Nearly 1 in 6 deaths in the world is due to cancer, making it a major problem for human potential. Traditional therapies for cancer depend often on how early in the stage of cancer the diagnostics can be done. Also, more often that not, the effectiveness of the cancer treatment depends on the particular subtype of cancer as well as the genetic makeup of the cancer patient. With the growth of large data sets and methods of analysis in biology, it is becoming increasingly easy to develop and use data analysis and visualisation methods to extract relevant insight from them which would help doctors and clinicians tackle the problem of early and personalised diagnosis as well as treatment. 
+                <br>
+                <br>
+                <p>
+                We will now look at the case of a hypothetical future clinician, who works with the data scientist, the patient, the power of research behind her, and using data visualisation to help the patient who has come to her for being diagnosed.
+                </p>
+            </div>
+            <br /></br>
+
+            <h2 class="title" style="text-align:center">Clinique du Futur</h2>
+            <br /></br>
+
+            <div class="story-text">
+                Our clinician has the backing of the scientists who compiled this excellent database of cancer genomics, known as <a href="https://cancergenome.nih.gov/" target = "_blank">TCGA</a> to put at her disposal. The dataset has been visualised by our dataviz experts (<i>ahem ahem</i>) and compiled into a nice sunburst! 
+                <br>
+                <br>
+                The sunburst is shown below. The hierarchical arrangement of the circles from inside to out represents the questions to be asked to the patient by the clinician. Our hypothetical questions might go like ... 
+                <br>
+                <br>
+                <i style="font-size: 100%">Clinician : What biological sex were you born into, irrespective of what you identify as?</i>
+                <br>
+                <br>
+                and so on...
+
+                <br>
+                <br>
+                The questions detail step by step what all to select from the sunburst. Click on the layers according to the answers in the sunburst below :
 
             </div>
-						<br /></br>
-
-						<h2 class="title" style="text-align:center">The Cancer Genome Atlas (TCGA)</h2>
-            <div class="story-text">
-
-
+        </div>
+        </section>
+    
+        <section class="sunburst_section">
+            <div class="sunburst">
+                <script src = 'sunburst.js'></script>
             </div>
-
-
-    </section>
-		</div>
-
-    <!--Map-->
-    <section id="pinned-trigger2" class="centered-section">
-        <div id="pinned-element2">
-            <br><br>
-            <!--Buttons, Slider-->
-
-            <!--User Guide-->
-            <div id="overlay" onclick="off('overlay')">
-                <div class="help-text">
-                    <h2>Countries</h2>
-                    <ul>
-                        <li>Use the buttons
-                            <div class="dummy btn-group" role="group" aria-label="Basic example">
-                                <button class="dummy btn btn-primary" disabled>Play</button>
-                                <button class="dummy btn btn-primary" disabled>Sum</button>
-                            </div>
-                            to activate the year slideshow or directly use the slider to visualize data for a given year.
-                        </li>
-                        <li>Click
-                            <button class="dummy btn btn-primary" disabled>Sum</button>
-                            to see the sum of deaths for all years
-                        </li>
-                        <li>Click on <input type="checkbox" data-style="dummy" class="dummy toggle-dummy"
-                                            title="type-data" checked disabled> to change the data between civilian and
-                            total deaths
-                        </li>
-                        <li>Hover on a country for some key numbers</li>
-                        <li>Click on a country to get more detailed information</li>
-                        <li>Click on the same country again to get back</li>
-                    </ul>
+        </section>
+    
+        <section>
+            <div class="text-center parallax data-story" id="pinned-element1">
+                <div class="story-text">
+                    Once the future clinician is done, she can just look up at the number of datapoints she has from the previous database on someone like the current patient. That is the percentage shown above. Armed with this prior knowledge, she proceeds to the next step of the diagnosis, locating similar people in the patient graph. Let us <a href="clinical_graph/index.html">follow her.</a>
                 </div>
             </div>
-            <!--Color Legend-->
-            <div id="color-legend"></div>
+        </section>
 
-            <!--Containers-->
-            <div id="content">
-                <div id="map-container-c">
-                    <div id="map-container">
-
-                    </div>
-                </div>
-                <div id="details">
-									<script src="sunburst.js"></script>
-								</div>
-            </div>
-
-            <!--Map Script-->
-
-        </div>
-    </section>
-
-    <section>
-        <div class="data-story">
-            <h3 class="subtitle">Actors Analysis</h3>
-            <p>
-                In addition to a geographical analysis, it is interesting to study the actors causing the conflicts.
-                In the <a target="_blank" class="textlink" href="http://ucdp.uu.se/downloads/">UCDP</a> data set
-                the name of the actors but no additional information is given.
-                <br>
-                <br>
-                We enriched the set by scraping some key Wikipedia pages in order to get a list of armed actors and
-                information about them such as their ideology or official designation as terrorists. Then the scrapted data was matched and merged with
-                the actors using a <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein string distance</a>.
-                <br>
-                <br>
-                This allowed us to provide the following visualization of actors' involvement in conflicts. The bubbles
-                represent the sum of deaths an actor caused in all conflicts (excluding collateral victims). The sum
-                of civilians killed in conflicts in which the actor was involved is also provided for information in the detail view.
-                <br>
-                <br>
-                Note that the Government of Rwanda has been removed from the data set in the following visualization
-                because of the genocide, since it would have otherwise crushed all the other bubbles.
-            </p>
-        </div>
-    </section>
-
-    <section>
-
-        <div class="data-story">
-            <p>The bubbles indicate a tendency that governments seem to be responsible for the largest amount of
-                deaths. However in many cases, governments might not be legitimate (lawfully or morally). The most important
-                actor (except from the Government of Rwanda) is the Government of Afghanistan due to its war against the
-                Talibans. This war caused more than 100'000 <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Enemy_combatant">combatant victims</a>.
-            </p>
-            <br>
-            <h3 class="subtitle">Conclusion</h3>
-            <p>The goal of this data analysis project was to raise awareness for the global developments of the world peace.
-            Through graphical visualization, new insights on complex data can be obtained.
-            </p>
-            <br>
-            <p>The in-depth analysis of a large-scale dataset shows a number of major difficulties to understanding data:
-                Being able to create links requires first and foremost a huge amount of data cleaning and standardization.
-                Secondly, data can be enriched by merging it with external datasets and combining its features. Both have
-                been crucial in this project to produce better visualizations.
-            </p>
-            <br>
-            <p>
-                Finally, the quality of the visualizations depends to a large extent on the possibilities, learning curve and
-                ease of implementation of the used framework. We have enjoyed delving into this challenge, using
-                various frameworks, programming tools and, most importantly, our minds to better understand the recent world history.
-            </p>
-        </div>
-    </section>
     <!--About Us-->
-    <section class="bottom">
-        Data Visualisation Project 2017, EPFL<br>
-        See the code <a target="_blank" href="https://github.com/sharbatc/cancer_dataviz"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
-    </section>
-</main>
-
-
-<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
-<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
-<script src = 'https://d3js.org/d3.v4.min.js'></script>
-<script src = 'https://rawgit.com/cytoscape/cytoscape.js/master/dist/cytoscape.min.js'></script>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src = "assets/data"></script>
-
-
-	</body>
+        <section class="bottom">
+            Data Visualisation Project 2017, EPFL<br>
+            See the code and process book <a target="_blank" href="https://github.com/sharbatc/cancer_dataviz"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
+        </section>
+    </main>
+</body>
 </html>
