@@ -2,8 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="graph.css" rel="stylesheet" type="text/css" />
-		
+		<link rel="stylesheet" type="text/css" href="../style.css"/>	
 		<script src = 'assets/d3v4.js'></script>
 	    <script src = 'https://unpkg.com/cytoscape/dist/cytoscape.min.js'></script>
 	    <script src = 'https://unpkg.com/webcola/WebCola/cola.min.js'></script>
@@ -11,20 +10,37 @@
 	    <script src = "assets/jquery-3.2.1.min.js"></script>
 	    <script src = "assets/data_s"></script>
 	    <script src = "https://rawgit.com/cytoscape/cytoscape.js-cose-bilkent/master/cytoscape-cose-bilkent.js"></script>
-		<script src = "https://rawgit.com/cytoscape/cytoscape.js-qtip/master/cytoscape-qtip.js"></script>
-		
+		<script src = "https://rawgit.com/cytoscape/cytoscape.js-qtip/master/cytoscape-qtip.js"></script>	
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
 		<script src = "https://rawgit.com/iVis-at-Bilkent/cytoscape.js-expand-collapse/master/cytoscape-expand-collapse.js"></script>		    
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css"></link>	    
 	</head>
 	
-	
-
-
 	<body>
+		<section id="pinned-trigger1" class="centered-section">
+			<div class="text-center parallax data-story" id="pinned-element1">
+                    <h2 class="title" style="text-align:center">Clinique du Futur : Chambre 2</h2>
+                    <br /></br>
+            <div class="story-text">
+            	The correct parameters are chosen in the graph below to see if we can find the group to which the patient belongs. Once this is known, we follow the clinician to the next chamber (mentally).
+            	<br>
+            	<br>
+            	<br>
+            	Notes and instructions:
+            	<br>
+            	We have excluded races fir which there were only one or two data points, namely latino and Native american.
+            	<br>
+            	The threshold filters by patients which are closer than the given number. 
+            	<br>
+            	The threshold has been upper bounded by 0.05 to only consider oatients which are very close to each other. 
+            	<br>
+            	The graph takes some time to render due to the large number of edges and nodes.
+            </div>
+        </div>
+    	</section>
+    	
 		<div id="cy"></div>
 		<div id="cy-hidden"><input type='button' id='toggle_cy' onclick="toggle_cy()" ></div>
-		
 
 		<div id='filters'>
 		<form onsubmit="return updateGraph();" class="filter-form">
@@ -76,18 +92,15 @@
 			
 			<p>
 			<label for="dist_thresh">Distance threshold</label>
-			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  /> 
+			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.05"  /> 
 			</p>
 			
 			<p>			
 			<input type="submit" value="Submit">
 			</p>
-
 		</form>		
 		</div>
-	    
-	    <script src = 'main.js'></script>
-		
+	     <script src = 'main.js'></script>
 	</body>
 </html>
 

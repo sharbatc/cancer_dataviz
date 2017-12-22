@@ -27,6 +27,18 @@ function reset_parents(){
 }
 reset_parents();
 
+function find_reps(cy){
+	var id1, id2, id3, id4, id5;
+	var f1, f2, f3, f4, f5;
+	f1 = f2 = f3 = f4 = f5 = 0;
+
+	if(cy.nodes('[age_groups = less_than_50]').nonempty()){
+		cy.nodes('[age_groups = less_than_50]').forEach( function (node){
+			id1 = node.id();
+			break;
+		});
+	}
+}
 
 
 // Define cytoscape instance
@@ -57,7 +69,6 @@ var cy = cytoscape({
 			'width': 0.3,
 			'line-color': 'mapData(distance, 0.01, 0.05, #A9A9A9, #000000)',
 			'opacity': 'mapData(distance, 0.01, 0.05, 0.1, 1)',
-			'curve-style': 'bezier'
 		  }
 		},
 		{
@@ -85,107 +96,29 @@ var nodes_not_isolated = cy.edges().connectedNodes();
 var to_keep = cy.edges().union(nodes_not_isolated);
 var removed = to_keep.absoluteComplement().remove();
 
-// API for collapsibility 
-var api = cy.expandCollapse({
-					layoutBy: {
-						name: "cose-bilkent",
-						animate: "end",
-						randomize: true,
-						nodeRepulsion: 4500
-					},
-					fisheye: true,
-					animate: true,
-					undoable: false
-				});
-
-
-// Find representatives to add collapsibility
-function find_reps(cy){
-	var id1, id2, id3, id4, id5;
-
-	if(cy.nodes('[age_groups = \'less_than_50\']').nonempty()){
-		cy.nodes('[age_groups = \'less_than_50\']').some( function (node){
-			id1 = node.id();
-			return true;
-		});} 
-	else{ id1 = '-1'; }
-	
-	
-	if(cy.nodes('[age_groups = \'between_50_and_60\']').nonempty()){
-		cy.nodes('[age_groups = \'between_50_and_60\']').some( function (node){
-			id2 = node.id();
-			console.log('tatti2');
-			return true;
-		});} 
-	else{ id2 = '-1'; }
-	
-	
-	if(cy.nodes('[age_groups = \'between_60_and_70\']').nonempty()){
-		cy.nodes('[age_groups = \'between_60_and_70\']').some( function (node){
-			id3 = node.id();
-			return true;
-		});} 
-	else{ id3 = '-1'; }
-	
-	
-	if(cy.nodes('[age_groups = \'more_than_70\']').nonempty()){
-		cy.nodes('[age_groups = \'more_than_70\']').some( function (node){
-			id4 = node.id();
-			return true;
-		});}
-	else{ id4 = '-1'; }
-	
-	
-	if(cy.nodes('[age_groups = \'not_reported\']').nonempty()){
-		cy.nodes('[age_groups = \'not_reported\']').some( function (node){
-			id5 = node.id();
-			return true;
-		});}
-	else{ id5 = '-1'; }
-	
-	return {id1, id2, id3, id4, id5};
-}
-
-let {id1, id2, id3, id4, id5} = find_reps(cy);
-
-var dict = {
-  'less_than_50': id1,
-  'between_50_and_60': id2,
-  'between_60_and_70': id3,
-  'more_than_70': id4,
-  'not_reported': id5
-};
-
-var arr_age = ['less_than_50', 'between_50_and_60', 'between_60_and_70', 'more_than_70', 'not_reported']
-function map_parents(cy){
-	arr_age.forEach(function (age){
-		if(dict[age] == '-1'){
-			cy.nodes('[age_groups =  \'' + age + '\']').forEach(function(node){
-				node.move({parent: node.id()});
-			});
-		} else {
-			cy.nodes('[age_groups =  \'' + age + '\']').forEach(function(node){
-				console.log()
-				node.move({parent: dict[age].toString()});
-				
-			});
-		}
-	});
-}
-map_parents(cy);
-arr_age.forEach(function (age){
-	api.collapse(cy.nodes('[age_groups =  \'' + age + '\']'));
-})
 
 // Define layout
 var options = {
   name: 'cose-bilkent',
   idealEdgeLength: 50,
+  randomize: true,
   tilingPaddingVertical: 1,
   tilingPaddingHorizontal: 1
 };
 var cose_layout = cy.layout(options);
 
+// API for collapsibility 
+var api = cy.expandCollapse({
+					layoutBy: {
+						name: "cose-bilkent",
+						animate: "end",
+						randomize: false,
+						fit: true
+					},
+					fisheye: true,
+					animate: true,
+					undoable: false
+				});
 
 
 // Run layout
@@ -196,7 +129,7 @@ toggle.click();
 
 // Add a qtip
 function qtipText(node) {
-  return 'Reference:' + node.data('reference') + '&nbsp </br>' +'Race: '+ node.data('race') +  '&nbsp </br>' + 'Age group: ' + node.data('age_groups') + '&nbsp </br>' + 'Gender: ' + node.data('gender') + '&nbsp</br> ' + 'Country: ' + node.data('tissue_source_country');
+  return 'Reference:' + node.data('reference') + '&nbsp</br>' +'Race: '+ node.data('race') +  '&nbsp </br>' + 'Age group: ' + node.data('age_groups') + '&nbsp </br>' + 'Gender: ' + node.data('gender') + '&nbsp</br> ' + 'Country: ' + node.data('tissue_source_country');
 }
 
 // qtip specifications
