@@ -53,46 +53,41 @@ var removed = cy.collection();
 function updateGraph(){
 
 	cy.startBatch();
-	
-	
-	
-	var gender_selection = document.getElementById("input_gender").value;	
+
+
+
+	var gender_selection = document.getElementById("input_gender").value;
 	var race_selection = document.getElementById("input_race").value;
 	var dist_threshold = document.getElementById("dist_thresh").value;
-	
+
 	removed.restore();
-	
-	
+
+
 	if(gender_selection == 'all'){
 		var gender_nodes = cy.nodes();
 	} else {
 		var gender_nodes = cy.nodes('[gender = \'' + gender_selection + '\']');
 	}
-	
+
 	if(race_selection == 'all'){
 		var race_nodes = cy.nodes();
 	} else {
 		var race_nodes = cy.nodes('[race = \'' + race_selection + '\']');
 	}
-	
+
 	var keep_nodes = race_nodes.intersection(gender_nodes);
 	var keep_edges = cy.edges('[distance < ' + dist_threshold + ']');
-	
+
 	var updated_graph = keep_nodes.union(keep_edges);
-	
-	
+
+
 	removed = updated_graph.absoluteComplement().remove();
-	
+
 	cy.endBatch();
-	
-	
+
+
 	//var t1 = cy.nodes("[gender = 'female']");
 	//var t2 = t1.union(cy.edges("[distance < 0.05]"));
 	//cy.remove(t2.absoluteComplement());
 	return false;
 }
-
-
-
-
-
