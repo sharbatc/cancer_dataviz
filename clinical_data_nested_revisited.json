@@ -1,0 +1,185 @@
+{
+     "name": "gender",
+     "children": [
+          {
+               "name": "Female",
+               "children": [
+                    {
+                         "name": "Asian",
+                         "children": [
+                              {
+                                   "name": "Pakistan",
+                                   "children": [
+                                        {"name": "Undefined","size": 2}
+                                   ]
+                              },
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Under 50","size": 14},
+                                        {"name": "Between 50 and 60","size": 19},
+                                        {"name": "Between 60 and 70","size": 9},
+                                        {"name": "Above 70","size": 6},
+                                        {"name": "Undefined","size": 11}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "Black",
+                         "children": [
+                              {
+                                   "name": "Nigeria",
+                                   "children": [
+                                        {"name": "Under 50","size": 3},
+                                        {"name": "Between 50 and 60","size": 1}
+                                        
+                                   ]
+                              },
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Under 50","size": 53},
+                                        {"name": "Between 50 and 60","size": 48},
+                                        {"name": "Between 60 and 70","size": 36},
+                                        {"name": "Above 70","size": 37},
+                                        {"name": "Undefined","size": 2}
+
+
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "Latino",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Under 50","size": 1},
+                                        {"name": "Above 70","size": 1}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "Native American",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Between 50 and 60","size": 1}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "Undefined",
+                         "children": [
+                              {
+                                   "name": "Canada",
+                                   "children": [
+                                        {"name": "Under 50","size": 1},
+                                        {"name": "Between 50 and 60","size": 1}
+                                   ]
+                              },
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {"name": "Under 50","size": 9},
+                                        {"name": "Between 50 and 60","size": 14},
+                                        {"name": "Between 60 and 70","size": 26},
+                                        {"name": "Above 70","size": 34}
+                                   ]
+                              },
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Under 50","size": 2},
+                                        {"name": "Between 50 and 60","size": 1},
+                                        {"name": "Between 60 and 70","size": 4}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "White",
+                         "children": [
+                              {
+                                   "name": "Brazil",
+                                   "children": [
+                                        {"name": "Under 50","size": 1},
+                                        {"name": "Between 60 and 70","size": 1}
+                                   ]
+                              },
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {"name": "Under 50","size": 13},
+                                        {"name": "Between 50 and 60","size": 22},
+                                        {"name": "Between 60 and 70","size": 18},
+                                        {"name": "Above 70","size": 24}
+                                   ]
+                              },
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Under 50","size": 177},
+                                        {"name": "Between 50 and 60","size": 164},
+                                        {"name": "Between 60 and 70","size": 193},
+                                        {"name": "Above 70","size": 131},
+                                        {"name": "Undefined","size": 1}
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "name": "Male",
+               "children": [
+                    {
+                         "name": "Black",
+                         "children": [
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Between 50 and 60","size": 3}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "Undefined",
+                         "children": [
+                              {
+                                   "name": "Germany",
+                                   "children": [
+                                        {"name": "Under 50","size": 1}
+                                   ]
+                              }
+                         ]
+                    },
+                    {
+                         "name": "White",
+                         "children": [
+                              {
+                                   "name": "Poland",
+                                   "children": [
+                                        {"name": "Under 50","size": 1}
+                                   ]
+                              },
+                              {
+                                   "name": "USA",
+                                   "children": [
+                                        {"name": "Between 50 and 60","size": 1},
+                                        {"name": "Between 60 and 70","size": 3},
+                                        {"name": "Above 70","size": 3}
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          }
+     ]
+}

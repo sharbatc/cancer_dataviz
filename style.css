@@ -1,0 +1,474 @@
+html,
+body {
+    margin: 0;
+		padding: 0;
+		overflow-x: : hidden;
+    height: 100%;
+		width: 100%;
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+    font-size:95%;
+}
+
+
+.actors-select{
+    position: absolute;
+    text-align:left !important;
+    float:left;
+    margin-left:25px;
+    bottom: 10%;
+}
+
+#actorDetails{
+    position: absolute;
+    float:right;
+    text-align:right;
+    right:5%;
+    bottom: 10%;
+    padding: 3px 20px 20px 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+}
+
+button{
+    outline: none !important;
+    text-align:left !important;
+}
+
+h1{
+    font-size:50px;
+    font-weight: 300;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+h2{
+    font-size:30px;
+    font-weight: 100;
+}
+
+h3{
+    font-size:20px;
+    font-weight:100;
+
+    margin-bottom: 26px;
+}
+
+.subtitle{
+    margin-top: 60px;
+}
+
+h4{
+    font-size:15px;
+    font-weight:100
+}
+
+h1 h2 h3 h4{
+    color: darkslategray !important;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.help-text{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color:white;
+    text-align:left;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+/*Sections*/
+.centered-section {
+    text-align: center;
+}
+
+.full-screen {
+    height: 100%; /* makes panels the entire window height */
+		width: 100%;
+}
+
+
+
+.blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#help-text > ul> li{
+    color:white;
+}
+
+#ada-logo{
+    width:30%;
+    margin-left: 9%
+}
+
+#epfl-logo{
+    width:53%;
+		margin-left: 5%
+}
+
+i{
+    font-size: 50%;
+}
+
+a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
+    color: black;
+}
+
+.title{
+    margin: auto;
+    padding: 0.5em 1em;
+}
+h1 span{
+    padding:0.3em 0.3em;
+    background-color: white;
+}
+
+.bottom{
+    background-color: lightgray;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+/*data story*/
+.intro{
+    font-size: 150%;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: left;
+	width: auto;
+	height: auto;
+	padding: 8px;
+	font: 12px sans-serif;
+	background: #0a2538;
+	border: #0a2538 1px solid;
+	border-radius: 0px;
+	pointer-events: none;
+	color: white;
+}
+
+.paragraph{
+    font-size: 150%;
+    text-align: center;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+.logos{
+    float:left;
+    top:10px;
+    margin-right:10%
+}
+
+#slidecontainer {
+    width: 100%;
+}
+
+#details{
+    position: fixed;
+    bottom:0;
+    left:0;
+    background: linear-gradient(to top, rgba(255,255,255,.9), rgb(255,255,255));
+    opacity: .95;
+    overflow-y: scroll;
+}
+
+#slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.dummy{
+    font-size: 10px !important;
+    line-height: 6px !important;
+}
+
+#slider:hover {
+    opacity: 1;
+}
+
+#slider span {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    top: -.7em;
+    border-radius: 50%;
+    background: darkslategrey;
+    cursor: pointer;
+}
+
+#slider span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: darkslategray;
+    cursor: pointer;
+}
+
+#overlay, #bubbles-overlay, #chart-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.show-instructions{
+    float:right;
+}
+
+circle{
+    stroke-width: 1px !important
+}
+
+#color-legend{
+    position:absolute;
+    bottom: 12%;
+    right: 78%;
+    left: 12%;
+}
+
+
+
+.dummy-toggle{
+    width:100px !important ;
+    height:20px !important;
+}
+.dummy-toggle > div > label{
+    font-size: 10px !important;
+    line-height: 5px !important;
+}
+.sidebar h2, .sidebar h3{
+    margin-left:10px
+}
+
+.clear-icon{
+    float: right;
+    cursor: pointer;
+    margin-right: 3%;
+}
+
+.clear-icon-left{
+    float: left;
+    cursor: pointer;
+    margin-left: 1%;
+}
+.white{
+    color: white;
+}
+
+.right-aligned{
+    margin-right:5%;
+    float:right
+}
+
+.centered{
+    display: table;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 4px;
+}
+
+.legend-icons {
+    vertical-align: -6px !important;
+}
+
+/*rounded top button for vertical button group*/
+.top-button{
+    border-top-right-radius: 4px !important;
+    border-top-left-radius: 4px !important;;
+}
+
+#interactive-chart{
+    display: inline;
+}
+#chart-select{
+    vertical-align: top;
+}
+
+#details-chart-container{
+    margin-top:10px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    text-align:left;
+    padding:30px;
+    border-radius: 4px;
+    width: 100%;
+    color:black;
+}
+
+.textlink, .textlink:visited, .textlink:active{
+    color: #333;
+    transition: background-color 0.2s ease;
+    transition: padding 0.2s ease;
+    padding:0px;
+    color:rgb(0, 122, 255);
+    background-color:inherit;
+    text-decoration: none !important;
+}
+
+.textlink:hover{
+    background-color: rgba(167, 208, 233, 0.39);
+    padding-top:4px;
+    padding-bottom:4px;
+    color: #333;
+    text-decoration: none !important;;
+    border-bottom: 2px solid #50a0de;
+}
+
+.wikibutton{
+    margin-top: 10px;
+
+}
+
+#info-tooltip{
+    padding: 6px;
+    float: left;
+    color: slategray;
+}
+
+.data-story{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 67px;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: justify;
+}
+
+.image12{
+    text-align:center;
+    margin:10px;
+    float:right;
+    max-width:40%;
+    padding:10px;
+    border-radius: 4px;
+    margin-left:25px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.imgContainer > img{
+    border-radius: 3px;
+    width:90%;
+}
+
+.chart-overlay{
+    padding:12px;
+    border-radius: 3px;
+    background:rgba(255,255,255,.9);
+}
+
+#page-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* (x, y)  => position */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+    padding: 53px 70px 70px 70px;
+    background: rgba(255,255,255,.8);
+    border-radius: 7px;
+}
+
+#about-us{
+    margin-top:-10px;
+    padding:100px;
+}
+.profile-image{
+    border-radius: 50%;
+    max-width:50%;
+    margin:30px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.socialmedia{
+    margin-right:12px;
+    margin-left:12px;
+}
+
+.profile-description{
+    text-align:center;
+}
+
+#intro-section{
+    background-image: url('imgs/background.jpg');
+		background-size: 100% auto;
+}
+
+#map-svg{
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    background-color: #f2f2f2;
+}
+
+#map-container{
+    margin-top:20px;
+    width: 80%;
+    height:600px;
+    margin: 0 auto;
+}
+
+#chart-distro1{
+    margin-top:20px;
+    margin-bottom:20px;
+    padding:10px 10px 60px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.centered-text{
+    text-align:center
+}
+
+.about-us-section{
+    margin-top: 130px;
+}
+#cy {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#filters{
+	float: right;
+}
