@@ -66,155 +66,26 @@
 					<h2 class="title" style="text-align:center">The Story of Cancer</h2>
 					<br /></br>
             <div class="story-text">
-								This is a story of <a class="textlink" target = "blank" href="https://en.wikipedia.org/wiki/The_Emperor_of_All_Maladies">the emperor of all maladies</a>, or rather, its future. Data driven research
+								This is a story of <a class="textlink" target = "blank" href="https://en.wikipedia.org/wiki/The_Emperor_of_All_Maladies">the emperor of all maladies</a>, or rather, its future.
 
             </div>
+						<br /></br>
 
+						<h2 class="title" style="text-align:center">The Cancer Genome Atlas (TCGA)</h2>
             <div class="story-text">
 
-                <br>
-                <p>As conventional journalism is being superseded by mass consumption of social media which are often
-                    likely to convey biased or <span id="fake-news">fake news</span>, it seems crucial to
-                    reassess our understanding of the more recent world conflicts. The aim of this data story is to lay down
-                    some historical landmarks of world politics.
-                </p>
-                <br>
-                <p> The end of the 1980s represent a turning point in history with the end of the Cold War. Many people
-                    hoped this would lead to a New World Order. Has it been the case? Which conflicts have
-                    taken place since then? How has the world violence evolved since 1989? Let's find answers in
-                    the data.
-                </p>
-                <br>
-                <p>Our work is based on the Uppsala Conflict Data Program (<a class="textlink" target="_blank"
-                                                                              href="http://ucdp.uu.se/downloads/">UCDP</a>)
-                    dataset which records all lethal events having taken place in any country (except Syria and
-                    North-Korea) from 1989 to 2016. Along the data story, some links are provided for further information.
-                    Furthermore, to understand more broadly the current economic and political stability, we also show
-                    economic data from the <a class="textlink" target="_blank" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">
-                        World Bank</a>.
-                </p>
-                <br>
-                <p>In the following, an event represents an incident where armed forces were used by an organised
-                    actor against another actor resulting in at least one direct death on either side.</p>
-                <br>
-                <h3 class="subtitle">Global Analysis</h3>
-                <p>In order to get a  raw sense of world peace, we think of two indicators, the <em>total number of
-                    deaths</em> and <em>civilian deaths</em> caused by armed events.</p>
 
-                <h3 style="text-align: center">Graph showing patient data</h3>
-                <div id="global-chart"></div>
-                <script src="js/charts_global.js"></script>
-                <br>
-                <br>
-                <br>
-                <p> For comparison, the Holocaust caused about six million Jewish victims during <a
-                        class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Nazi_Germany">Nazi
-                    Germany</a> and the Khmer Rouges killed around 1.5 million people under Pol Pot's <a
-                        class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Democratic_Kampuchea">Democratic
-                    Kampuchea</a>. The Rwandan genocide is the most deadly event in the post cold-war era. It is also
-                    <a class="textlink" target="_blank" href="https://en.wikipedia.org/wiki/Democratic_Kampuchea">ranked 7</a> among all the genocides in history.</p>
-                <br>
-                <p>Looking at conflicts on a global scale makes it hard to discern any general tendency. Instead, we
-                    can have a look at the figures on a regional scale.</p>
-
-                <h3 class="subtitle">Regional Analysis</h3>
-
-                <p>
-                    The following figure provides details on the death tolls on a regional scale. For didactic purposes,
-                    hovering on the bars reveals details about the conflicts happening in the corresponding year. A conflict is displayed
-                    if it accounts for more than the 98% quantile of deaths during this year.
-                    <br>
-                    <br>
-                    Take some time to get an idea of the most important conflicts in each continent.
-                </p>
             </div>
-            <h3 id="chart-title" style="text-align: center">Detailed deaths time series by region</h3>
-            <div class="btn-group-vertical" id="chart-select">
-                <h4>Region</h4>
-                <button type="button" class="btn btn-default top-button choice" id="Africa"
-                        onclick="regionClicked(this)">
-                    Africa
-                </button>
-                <button type="button" class="btn btn-default choice" id="AfricaWR" onclick="regionClicked(this)">
-
-                    Africa without Rwanda
-                </button>
-                <button type="button" class="btn btn-default choice" id="Americas" onclick="regionClicked(this)">
-                    Americas
-                </button>
 
 
-                <button type="button" class="btn btn-default choice" id="Asia" onclick="regionClicked(this)">
-                    Asia
-                </button>
-                <button type="button" class="active btn btn-default choice" id="Europe" onclick="regionClicked(this)">
-                    Europe
-                </button>
-                <button type="button" class="btn btn-default choice" id="MiddleEast" onclick="regionClicked(this)">
-                    Middle East
-                </button>
-                <button class="btn btn-info show-instructions" onclick="on('chart-overlay')">Show Instructions</button>
-            </div>
-            <div id="interactive-chart"></div>
-            <script src="js/charts.js"></script>
-            <div id="details-chart-container">
-                <div id="details-chart" style="text-align:center">
-                    <h3>Details</h3>
-                    <h4>Hover on a bar to obtain more information on conflicts.</h4>
-                </div>
-            </div>
-            <p>
-                The above confirms that Africa, the Middle East and Asia (mainly the western part of Asia) are the three
-                main regions marked by armed conflicts. It is also possible to look at major crises by looking at countries
-                which, during some years, experienced death tolls a 1000 times larger than the median number of deaths over all years.
-                <br>
-                <br>
-                By doing so, we get conflicts you might have already noticed by playing with the preceding figure (such
-                as the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Bosnian_War">Bosnian war</a>,
-                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Rwandan_genocide">Rwandan genocide</a>,
-                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Yemeni_Revolution">Yemeni Revolution</a>)
-                but also the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Mozambican_Civil_War">Mozambican Civil War</a> (5222 casualties),
-                the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Tajikistani_Civil_War">Tajikistani Civil War</a> (4571 casualties),
-                and some punctual crisis such as the <a target="_blank" class="textlink" href="https://en.wikipedia.org/wiki/Tiananmen_Square_protests_of_1989">Tianamen Square protests</a>
-                in China in 1989 (2600 casualties).
-            </p>
-            <br>
-
-            <p>
-                The following map allows localizing the conflicts. We'll let you hang around on a fatal march then.
-            </p>
-        </div>
     </section>
-
+		</div>
 
     <!--Map-->
     <section id="pinned-trigger2" class="centered-section">
         <div id="pinned-element2">
             <br><br>
             <!--Buttons, Slider-->
-            <div class="row" id="menubar">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8" id='map'>
-                    <div id="slidecontainer">
-                        <div class="btn-group" role="group" style="float: left;">
-                            <button id="play" class="btn btn-primary">Play</button>
-                            <button id="type-data" class="btn btn-primary">Sum</button>
-                        </div>
-
-                        <input type="checkbox" id="toggle-two" title="type-data" checked>
-                        <button class="btn btn-info show-instructions" onclick="on('overlay')">Show Instructions
-                        </button>
-
-                        <br><br>
-
-                        <div id="slider"></div>
-
-                        <div id="dataset-title"><h2>Civilian Deaths (sum)</h2></div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
 
             <!--User Guide-->
             <div id="overlay" onclick="off('overlay')">
@@ -252,11 +123,12 @@
 
                     </div>
                 </div>
-                <div id="details"></div>
+                <div id="details">
+									<script src="sunburst.js"></script>
+								</div>
             </div>
 
             <!--Map Script-->
-            <script src="js/map.js"></script>
 
         </div>
     </section>
@@ -314,56 +186,11 @@
         </div>
     </section>
     <!--About Us-->
-    <section class="centered-section about-us-section">
-        <h2>About us</h2>
-        <div class="row" id="about-us">
-            <div class="col-sm-4">
-                <h3>Armand Boschin</h3>
-                <img src="imgs/armand.jpg" class="profile-image" alt="armand">
-                <br>
-                <a target="_blank" href="https://github.com/armand33"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/armandboschin/"><i class="fa fa-linkedin fa-2x socialmedia"
-                                                                                        aria-hidden="true"></i></a>
-                <br><br>
-                <div class="profile-description">École polytechique student <br> Applied Mathematics and Computer Science <br>
-                    EPFL Master student in Data Science</div>
-            </div>
-            <div class="col-sm-4">
-                <h3>Cyril Wendl</h3>
-                <img src="imgs/cyril.JPG" class="profile-image" alt="cyril">
-                <br>
-                <a target="_blank" href="https://github.com/CyrilWendl"><i class="fa fa-github fa-2x socialmedia"
-                                                                           aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/cyrilwendl"><i class="fa fa-linkedin fa-2x socialmedia"
-                                                                                    aria-hidden="true"></i></a>
-                <br><br>
-                <div class="profile-description">EPFL Master student <br> Environmental Engineering and Computer Science<br>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <h3>Francis Damachi</h3>
-                <img src="imgs/francis.jpg" class="profile-image" alt="francis">
-                <br>
-                <a target="_blank" href="https://github.com/damachi49"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/francis-ikpe-ogar-damachi-989610148/"><i class="fa fa-linkedin fa-2x socialmedia"
-                                                                                                              aria-hidden="true"></i></a>
-                <br><br>
-                <div class="profile-description">EPFL Master student <br> Computer Science and Data Analytics</div>
-            </div>
-        </div>
-    </section>
     <section class="bottom">
         Data Visualisation Project 2017, EPFL<br>
         See the code <a target="_blank" href="https://github.com/the-face-of-geopolitics/the-face-of-geopolitics.github.io"><i class="fa fa-github fa-2x socialmedia" aria-hidden="true"></i></a>
     </section>
 </main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
-<!-- <script src="js/app.js"></script> -->
-
 
 
 <script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
@@ -373,23 +200,6 @@
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src = "assets/data"></script>
 
-		<div >
-			<style>
-			  div.tooltip {
-			  position: absolute;
-			  text-align: left;
-			  width: auto;
-			  height: auto;
-			  padding: 8px;
-			  font: 12px sans-serif;
-			  background: #0a2538;
-			  border: #0a2538 1px solid;
-			  border-radius: 0px;
-			  pointer-events: none;
-			  color: white;
-			}
-			</style>
-			<script src = 'sunburst.js'></script>
-		</div>
+
 	</body>
 </html>
