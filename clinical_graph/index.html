@@ -1,14 +1,21 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<link href="graph.css" rel="stylesheet" type="text/css" />
 		
-		<script src = 'http://marvl.infotech.monash.edu/webcola/cola.v3.min.js'></script>
-		<script src = 'https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.1.1/cytoscape-cola.js'></script>
 		<script src = 'assets/d3v4.js'></script>
-	    <script src = 'assets/cytoscape.js'></script>
+	    <script src = 'https://unpkg.com/cytoscape/dist/cytoscape.min.js'></script>
+	    <script src = 'https://unpkg.com/webcola/WebCola/cola.min.js'></script>
+   		<script src = 'assets/cyto-cola.js'></script>
 	    <script src = "assets/jquery-3.2.1.min.js"></script>
-	    <script src = "assets/data"></script>
+	    <script src = "assets/data_s"></script>
+	    <script src = "https://rawgit.com/cytoscape/cytoscape.js-cose-bilkent/master/cytoscape-cose-bilkent.js"></script>
+		<script src = "https://rawgit.com/cytoscape/cytoscape.js-qtip/master/cytoscape-qtip.js"></script>
+		
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+		<script src = "https://rawgit.com/iVis-at-Bilkent/cytoscape.js-expand-collapse/master/cytoscape-expand-collapse.js"></script>		    
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css"></link>	    
 	</head>
 	
 	
@@ -16,7 +23,7 @@
 
 	<body>
 		<div id="cy"></div>
-		<div id="cy-hidden"></div>
+		<div id="cy-hidden"><input type='button' id='toggle_cy' onclick="toggle_cy()" ></div>
 		
 
 		<div id='filters'>
@@ -36,9 +43,34 @@
 		 		<option value="all">All</option>
 				<option value="asian">Asian</option>
 				<option value="white">White</option>
-				<option value="black or african american">Black or African american</option>
-				<option value="american indian or alaska native">American indian or Alaska native</option>
+				<option value="black">Black or African american</option>
 				<option value="not reported">not reported</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="input age">Age group</label>
+		 	<select id="input_age" name="input age">
+		 		<option value="all">All</option>
+				<option value="less_than_50">Less than 50</option>
+				<option value="between_50_and_60">Between 50 and 60</option>
+				<option value="between_60_and_70">Between 60 and 70</option>
+				<option value="more_than_70">More than 70</option>
+				<option value="not_reported">not reported</option>
+			</select>
+			</p>
+			
+			<p>
+			<label for="input country">Country of source</label>
+		 	<select id="input_country" name="input country">
+		 		<option value="all">All</option>
+				<option value="USA">USA</option>
+				<option value="Poland">Poland</option>
+				<option value="Germany">Germany</option>
+				<option value="Pakistan">Pakistan</option>
+				<option value="Nigeria">Nigeria</option>
+				<option value="Canada">Canada</option>
+				<option value="Brazil">Brazil</option>
 			</select>
 			</p>
 			
