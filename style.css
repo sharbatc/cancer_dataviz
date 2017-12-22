@@ -152,16 +152,17 @@ h1 span{
 }
 
 div.tooltip {
-    position: absolute;
-    text-align: left;
-    width: auto;
-    height: auto;
-    font-size: 12px;
-    padding: 10px;
-    background: white;
-    border: 0;
-    border-radius: 5px;
-    pointer-events: none;
+	position: absolute;
+	text-align: left;
+	width: auto;
+	height: auto;
+	padding: 8px;
+	font: 12px sans-serif;
+	background: #0a2538;
+	border: #0a2538 1px solid;
+	border-radius: 0px;
+	pointer-events: none;
+	color: white;
 }
 
 .paragraph{
@@ -360,8 +361,8 @@ circle{
 }
 
 .data-story{
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 67px;
     border-radius: 4px;
     padding: 30px;
