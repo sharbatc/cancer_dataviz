@@ -2,8 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="graph.css" rel="stylesheet" type="text/css" />
-		
+		<link rel="stylesheet" type="text/css" href="../style.css"/>	
 		<script src = 'assets/d3v4.js'></script>
 	    <script src = 'https://unpkg.com/cytoscape/dist/cytoscape.min.js'></script>
 	    <script src = 'https://unpkg.com/webcola/WebCola/cola.min.js'></script>
@@ -11,20 +10,25 @@
 	    <script src = "assets/jquery-3.2.1.min.js"></script>
 	    <script src = "assets/data_s"></script>
 	    <script src = "https://rawgit.com/cytoscape/cytoscape.js-cose-bilkent/master/cytoscape-cose-bilkent.js"></script>
-		<script src = "https://rawgit.com/cytoscape/cytoscape.js-qtip/master/cytoscape-qtip.js"></script>
-		
+		<script src = "https://rawgit.com/cytoscape/cytoscape.js-qtip/master/cytoscape-qtip.js"></script>	
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
 		<script src = "https://rawgit.com/iVis-at-Bilkent/cytoscape.js-expand-collapse/master/cytoscape-expand-collapse.js"></script>		    
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css"></link>	    
 	</head>
 	
-	
-
-
 	<body>
+		<section id="pinned-trigger1" class="centered-section">
+			<div class="text-center parallax data-story" id="pinned-element1">
+                    <h2 class="title" style="text-align:center">Clinique du Futur : Chambre 2</h2>
+                    <br /></br>
+            <div class="story-text">
+            	The correct parameters are chosen in the graph below to see if we can find the group to which the patient belongs. Once this is known, we follow the clinician to the next chamber (mentally).
+            </div>
+        </div>
+    	</section>
+    	
 		<div id="cy"></div>
 		<div id="cy-hidden"><input type='button' id='toggle_cy' onclick="toggle_cy()" ></div>
-		
 
 		<div id='filters'>
 		<form onsubmit="return updateGraph();" class="filter-form">
@@ -82,12 +86,9 @@
 			<p>			
 			<input type="submit" value="Submit">
 			</p>
-
 		</form>		
 		</div>
-	    
-	    <script src = 'main.js'></script>
-		
+	     <script src = 'main.js'></script>
 	</body>
 </html>
 
