@@ -62,7 +62,7 @@ var svg = d3.select('body').append("svg")
   .attr('width', width)
   .attr('height', height)
   .append('g')
-  .attr("viewBox", "0 0 10 50")
+  // .attr("viewBox", "0 0 10 50")
   .attr('transform', 'translate(' + 650 + ',' + height / 2 + ')');
 
 //Getting the sizes of the slices of the elements of the sunburst.
@@ -128,6 +128,10 @@ function click(d){
     var percentage=(100 * d.value / total_size ).toPrecision(3);
     tooltip_fixed.html(key_html(d)+ " > " + "<b>" +percentage + " %</b>")
       .style("opacity",0.8)
+      .style('position','relative')
+      .style('bottom','50%')
+      .style('left','100')
+      .style('text-align','center')
       .style("font-size","15px")
       .style('display', 'block');
   }
@@ -172,7 +176,7 @@ var legend= d3.select("svg")
   .append("g")
     .attr("transform", function(d,i) { //Aligning the legend (each of the circles and the text) to the right side of the sunburst
         var legend_height = 20;
-        var x = 1000;
+        var x = 1100;
         var y = i * legend_height+((height-400)/2);
         return 'translate(' + x + ',' + y + ')';
   });
@@ -207,7 +211,7 @@ function render_sunburst(){d3.json("clinical_data_nested_revisited.json",functio
     .style("stroke-opacity",0)
     .style("stroke-width","3px")
     .style("fill", function (d) { return color[d.data.name]; }) //filling the areas of the sunburst with colors according to the color dictionary
-    .style("opacity", 1)
+    .style("opacity", 1.0)
     .on("click",click)
     .on("mouseout",mouseout)
     .on("mousemove",mousemove)

@@ -1,7 +1,10 @@
 html,
 body {
     margin: 0;
+		padding: 0;
+		overflow-x: : hidden;
     height: 100%;
+		width: 100%;
     background-color: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
     font-size:95%;
@@ -94,6 +97,7 @@ header {
 
 .full-screen {
     height: 100%; /* makes panels the entire window height */
+		width: 100%;
 }
 
 
