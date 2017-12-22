@@ -23,6 +23,11 @@
                     <br /></br>
             <div class="story-text">
             	The correct parameters are chosen in the graph below to see if we can find the group to which the patient belongs. Once this is known, we follow the clinician to the next chamber (mentally).
+
+            	Notes and instructions: We have excluded races fir which there were only one or two data points, namely latino and Native american. 
+            	The threshold filters by patients which are closer than the given number. 
+            	The threshold has been upper bounded by 0.05 to only consider oatients which are very close to each other. 
+            	The graph takes some time to render due to the large number of edges and nodes.
             </div>
         </div>
     	</section>
@@ -80,7 +85,7 @@
 			
 			<p>
 			<label for="dist_thresh">Distance threshold</label>
-			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.5"  /> 
+			<input type="number" id="dist_thresh" name="dist_thresh" step="any" min="0" max="0.05"  /> 
 			</p>
 			
 			<p>			
